@@ -41,13 +41,9 @@
   .pastille.tnt { background: var(--c); color: #16131f; border-color: transparent; font-weight: 600; }
   .corps { padding: 16px 20px 20px; }
   .accroche { font-size: 14.5px; line-height: 1.5; }
-  .question {
     margin-top: 14px; padding: 11px 13px; border-radius: 10px; font-size: 13.5px; line-height: 1.45;
     background: rgba(255,255,255,.06); border-left: 3px solid var(--c);
   }
-  .question b { display: block; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--c); margin-bottom: 3px; }
-  .chap { margin-top: 12px; font-size: 12.5px; opacity: .9; }
-  .chap i { font-style: normal; font-size: 11px; padding: 2px 7px; border-radius: 99px; border: 1px solid var(--c); color: var(--c); margin-left: 4px; white-space: nowrap; }
   .ou { margin-top: 14px; font-size: 12.5px; opacity: .8; }
   a.bouton {
     display: block; margin-top: 10px; text-align: center; text-decoration: none;
@@ -55,7 +51,6 @@
     padding: 12px; border-radius: 10px; transition: transform .15s, filter .15s;
   }
   a.bouton:hover { transform: translateY(-1px); filter: brightness(1.08); }
-  .pied { font-size: 11px; opacity: .55; text-align: center; margin-top: 12px; }
   .erreur { padding: 30px; text-align: center; color: #f4f1ea; }
 </style>
 </head>
@@ -85,11 +80,8 @@
       </div>
       <div class="corps">
         <p class="accroche">${esc(d.accroche)}</p>
-        ${d.chapitre ? `<p class="chap">📚 En lien avec : ${esc(d.chapitre)}${d.avenir ? '<i>bientôt en cours</i>' : ''}</p>` : ''}
-        <div class="question"><b>En regardant, demandez-vous</b>${esc(d.question)}</div>
         <p class="ou">${esc(d.ou)}</p>
         <a class="bouton" href="${esc(d.lien)}" target="_blank" rel="noopener">▶ ${esc(d.bouton || "Où le regarder")}</a>
-        <p class="pied">Un nouveau programme chaque vendredi · ${esc(d.classe)}</p>
       </div>`;
   } catch (e) {
     carte.innerHTML = '<div class="erreur">La recommandation n\'a pas pu se charger.</div>';
