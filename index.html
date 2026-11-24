@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>À voir cette semaine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root { --c: #f2a33a; }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { background: transparent; font-family: Inter, system-ui, sans-serif; }
+  .carte {
+    max-width: 420px; margin: 0 auto; border-radius: 18px; overflow: hidden;
+    background: #16131f; color: #f4f1ea;
+    box-shadow: 0 6px 24px rgba(0,0,0,.25);
+  }
+  .ecran {
+    position: relative; padding: 18px 20px 22px;
+    background:
+      radial-gradient(120% 90% at 85% 0%, color-mix(in srgb, var(--c) 55%, transparent) 0%, transparent 60%),
+      radial-gradient(90% 80% at 0% 100%, color-mix(in srgb, var(--c) 25%, transparent) 0%, transparent 70%),
+      #1d1928;
+  }
+  .haut { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .label {
+    font-family: "Bebas Neue", "Arial Narrow", sans-serif; letter-spacing: .12em; font-size: 15px; white-space: nowrap;
+    background: var(--c); color: #16131f; padding: 3px 10px 1px; border-radius: 4px;
+  }
+  .semaine { font-size: 11px; max-width: 45%; opacity: .75; text-align: right; }
+  .emoji { font-size: 46px; line-height: 1; margin: 18px 0 10px; filter: drop-shadow(0 4px 10px rgba(0,0,0,.4)); }
+  h1 {
+    font-family: "Bebas Neue", sans-serif; font-weight: 400; font-size: 34px; line-height: 1.02;
+    letter-spacing: .01em;
+  }
+  .infos { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .pastille {
+    font-size: 11.5px; padding: 4px 9px; border-radius: 99px;
+    background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.14);
+  }
+  .pastille.tnt { background: var(--c); color: #16131f; border-color: transparent; font-weight: 600; }
+  .corps { padding: 16px 20px 20px; }
+  .accroche { font-size: 14.5px; line-height: 1.5; }
+  .question {
+    margin-top: 14px; padding: 11px 13px; border-radius: 10px; font-size: 13.5px; line-height: 1.45;
+    background: rgba(255,255,255,.06); border-left: 3px solid var(--c);
+  }
+  .question b { display: block; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--c); margin-bottom: 3px; }
+  .chap { margin-top: 12px; font-size: 12.5px; opacity: .9; }
+  .chap i { font-style: normal; font-size: 11px; padding: 2px 7px; border-radius: 99px; border: 1px solid var(--c); color: var(--c); margin-left: 4px; white-space: nowrap; }
+  .ou { margin-top: 14px; font-size: 12.5px; opacity: .8; }
+  a.bouton {
+    display: block; margin-top: 10px; text-align: center; text-decoration: none;
+    background: var(--c); color: #16131f; font-weight: 600; font-size: 15px;
+    padding: 12px; border-radius: 10px; transition: transform .15s, filter .15s;
+  }
+  a.bouton:hover { transform: translateY(-1px); filter: brightness(1.08); }
+  .pied { font-size: 11px; opacity: .55; text-align: center; margin-top: 12px; }
+  .erreur { padding: 30px; text-align: center; color: #f4f1ea; }
+</style>
+</head>
+<body>
+<div class="carte" id="carte"><div class="erreur">Chargement…</div></div>
+<script>
+(async () => {
+  const carte = document.getElementById('carte');
+  const params = new URLSearchParams(location.search);
+  const id = (params.get('classe') || '').toLowerCase();
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  try {
+    const data = await (await fetch('data.json?v=' + Date.now(), {cache: 'no-store'})).json();
+    const d = data.classes[id];
+    if (!d) { carte.innerHTML = '<div class="erreur">Classe inconnue : ajoutez ?classe=2nde4, 2nde6, stmg ou sti2d à l\'adresse.</div>'; return; }
+    document.documentElement.style.setProperty('--c', d.couleur);
+    carte.innerHTML = `
+      <div class="ecran">
+        <div class="haut"><span class="label">À voir cette semaine</span><span class="semaine">${esc(data.semaine)}</span></div>
+        <div class="emoji">${esc(d.emoji)}</div>
+        <h1>${esc(d.titre)}</h1>
+        <div class="infos">
+          <span class="pastille tnt">📺 ${esc(d.chaine)}</span>
+          <span class="pastille">${esc(d.type)}</span>
+          <span class="pastille">Gratuit</span>
+        </div>
+      </div>
+      <div class="corps">
+        <p class="accroche">${esc(d.accroche)}</p>
+        ${d.chapitre ? `<p class="chap">📚 En lien avec : ${esc(d.chapitre)}${d.avenir ? '<i>bientôt en cours</i>' : ''}</p>` : ''}
+        <div class="question"><b>En regardant, demandez-vous</b>${esc(d.question)}</div>
+        <p class="ou">${esc(d.ou)}</p>
+        <a class="bouton" href="${esc(d.lien)}" target="_blank" rel="noopener">▶ ${esc(d.bouton || "Où le regarder")}</a>
+        <p class="pied">Un nouveau programme chaque vendredi · ${esc(d.classe)}</p>
+      </div>`;
+  } catch (e) {
+    carte.innerHTML = '<div class="erreur">La recommandation n\'a pas pu se charger.</div>';
+  }
+})();
+</script>
+</body>
+</html>

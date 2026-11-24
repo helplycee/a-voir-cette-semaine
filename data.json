@@ -1,0 +1,65 @@
+{
+  "semaine": "Semaine du 23 au 29 novembre",
+  "classes": {
+    "sti2d": {
+      "classe": "Terminale STI2D",
+      "emoji": "🏭",
+      "couleur": "#f2a33a",
+      "titre": "Qui a tué l'industrie française ?",
+      "type": "Documentaire · 1 h 13",
+      "chaine": "Public Sénat",
+      "ou": "Replay gratuit sur publicsenat.fr",
+      "accroche": "En cinquante ans, la France a perdu près de la moitié de ses usines. Fatalité ou mauvais choix ? Le film mène l'enquête comme un polar.",
+      "question": "Qui sont les « suspects » ? Lequel vous paraît le plus coupable ?",
+      "lien": "https://www.publicsenat.fr/emission/documentaire/documentaire-qui-a-tue-lindustrie-francaise-e0",
+      "bouton": "Où le regarder",
+      "chapitre": "la France dans la mondialisation",
+      "avenir": false
+    },
+    "stmg": {
+      "classe": "Terminale STMG",
+      "emoji": "🏭",
+      "couleur": "#e8664a",
+      "titre": "Qui a tué l'industrie française ?",
+      "type": "Documentaire · 1 h 13",
+      "chaine": "Public Sénat",
+      "ou": "Replay gratuit sur publicsenat.fr",
+      "accroche": "En cinquante ans, la France a perdu près de la moitié de ses usines. Fatalité ou mauvais choix ? Le film mène l'enquête comme un polar.",
+      "question": "Si vous dirigiez une entreprise, où installeriez-vous votre usine ? Pourquoi ?",
+      "lien": "https://www.publicsenat.fr/emission/documentaire/documentaire-qui-a-tue-lindustrie-francaise-e0",
+      "bouton": "Où le regarder",
+      "chapitre": "la France dans la mondialisation",
+      "avenir": false
+    },
+    "2nde4": {
+      "classe": "Seconde 4",
+      "emoji": "📱",
+      "couleur": "#c86bd8",
+      "titre": "Instagram / TikTok, la guerre des réseaux",
+      "type": "Documentaire · 1 h 10",
+      "chaine": "France 5",
+      "ou": "Replay gratuit sur france.tv",
+      "accroche": "Votre fil d'actu est un champ de bataille entre les États-Unis et la Chine. Comment TikTok a-t-il fait trembler Instagram ?",
+      "question": "Qu'est-ce qui rend l'algorithme de TikTok si difficile à lâcher ?",
+      "lien": "https://www.france.tv/recherche/?q=Instagram%20TikTok%20la%20guerre%20des%20r%C3%A9seaux",
+      "bouton": "Où le regarder",
+      "chapitre": "SNT, les réseaux sociaux",
+      "avenir": true
+    },
+    "2nde6": {
+      "classe": "Seconde 6",
+      "emoji": "🤖",
+      "couleur": "#4fb3e8",
+      "titre": "Intelligence artificielle, l'ultime invention ?",
+      "type": "Documentaire",
+      "chaine": "Arte",
+      "ou": "Replay gratuit sur arte.tv",
+      "accroche": "En quelques années, l'IA est sortie des laboratoires pour entrer dans votre poche. Que sait-elle vraiment faire… et que ne sait-elle pas faire ?",
+      "question": "Citez une chose que l'IA fait mieux que vous, et une qu'elle ne sait pas faire.",
+      "lien": "https://www.arte.tv/fr/search/?q=intelligence%20artificielle%20ultime%20invention",
+      "bouton": "Où le regarder",
+      "chapitre": "SNT, internet et le web",
+      "avenir": false
+    }
+  }
+}
