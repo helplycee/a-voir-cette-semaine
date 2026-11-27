@@ -15,14 +15,14 @@
     },
     "stmg": {
       "classe": "Terminale STMG",
-      "emoji": "🗳️",
+      "emoji": "🌏",
       "couleur": "#e8664a",
-      "titre": "L'art de perdre en politique",
-      "type": "Documentaire · 52 min",
-      "chaine": "LCP",
-      "ou": "Replay gratuit sur lcp.fr (acceptez les cookies « Vidéo » pour lancer le lecteur)",
-      "accroche": "Sarkozy, Hollande, Pécresse, Valls… Ils racontent sans filtre le soir où tout s'est effondré. Une plongée rare dans les coulisses des partis et des défaites électorales.",
-      "lien": "https://lcp.fr/programmes/l-art-de-perdre-en-politique-444067",
+      "titre": "France - Cambodge, si loin, si proche",
+      "type": "Documentaire · 50 min",
+      "chaine": "Public Sénat",
+      "ou": "Replay gratuit sur publicsenat.fr, sans inscription",
+      "accroche": "Un protectorat, une indépendance arrachée sans guerre, puis la dictature des Khmers rouges. Revivez 160 ans d'histoire commune et découvrez la décolonisation en pleine guerre froide.",
+      "lien": "https://www.publicsenat.fr/emission/documentaire/france-cambodge-si-loin-si-proche-e0",
       "bouton": "Où le regarder"
     },
     "2nde4": {
@@ -39,14 +39,14 @@
     },
     "2nde6": {
       "classe": "Seconde 6",
-      "emoji": "⚖️",
+      "emoji": "🏛️",
       "couleur": "#4fb3e8",
-      "titre": "Les combats méconnus de Robert Badinter",
-      "type": "Documentaire · 52 min",
-      "chaine": "LCP",
-      "ou": "Replay gratuit sur lcp.fr (acceptez les cookies « Vidéo » pour lancer le lecteur)",
-      "accroche": "Vous connaissez l'homme qui a aboli la peine de mort. Découvrez ses autres batailles : les prisons, l'égalité devant la loi et la défense acharnée de l'État de droit.",
-      "lien": "https://lcp.fr/programmes/les-combats-meconnus-de-robert-badinter-398646",
+      "titre": "Au temps des guerres médiques – Grecs contre Perses",
+      "type": "Documentaire · 1 h 30",
+      "chaine": "Arte",
+      "ou": "Replay gratuit sur arte.tv, sans inscription",
+      "accroche": "480 av. J.-C. : l'immense armée de Xerxès fond sur la Grèce. Suivez Thémistocle et la jeune démocratie athénienne, qui misent tout sur leur flotte pour résister.",
+      "lien": "https://www.arte.tv/fr/videos/120954-001-A/grecs-contre-perses/",
       "bouton": "Où le regarder"
     }
   }
